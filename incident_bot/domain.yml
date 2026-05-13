@@ -8,6 +8,13 @@ forms:
 
 actions:
   - action_submit_report
+actions:
+  - action_analyze_sentiment
+
+slots:
+  sentiment:
+    type: text
+    influence_conversation: false
 
 intents:
  - report_phishing
@@ -27,9 +34,16 @@ responses:
     - text: "Sorry to hear that. Please describe the malware detection and any actions you've taken."
   utter_report_unauthorized_access:
     - text: "We'll assist you immediately. When did you notice the unauthorized access?"
-
+  utter_provide_malware_info:
+    - text: "Malware can be harmful to your system. I recommend running a full system scan with your antivirus software."
 entities:
   - device
+
+responses:
+  utter_acknowledge_issue:
+    - text: "I'm sorry to hear you're experiencing issues. Let's work together to resolve this."  # For negative sentiment
+    - text: "I'm glad you're reaching out. How can I assist you today?"  # For neutral sentiment
+    - text: "It's great to hear from you! How can I help?"  # For positive sentiment
   - issue
   - incident_type
 
@@ -53,3 +67,6 @@ slots:
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+
+-
+

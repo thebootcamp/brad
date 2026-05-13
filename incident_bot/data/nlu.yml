@@ -7,6 +7,11 @@ nlu:
     - Someone is pretending to be our CEO
     - Got an email requesting sensitive information
 - intent: report_malware
+- intent: ask_about_malware
+  examples: |
+    - What can I do about malware?
+    - How do I remove a virus?
+    - Tell me about malware threats.
   examples: |
     - My [laptop](device) is infected with [malware](issue)
     - Detected a [virus](issue) on my [workstation](device)
